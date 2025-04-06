@@ -32,30 +32,6 @@ def init_stats():
     with open('statistics.txt', 'w') as stats:
         stats.write("Nr.     File Name     Words     P Words     Y Words     T Words     H Words     O Words     N Words\n")
 
-"""       
-def count_words(filename, possible_first_letters, total_word_count: bool = True):
-    length = len(possible_first_letters)
-    stats = [0] * length
-    try:
-        with open(filename, 'r', encoding = "utf8") as f:
-            data = f.read()
-            if data[0] == '\ufeff':
-                data = data[1:]
-
-            words = data.split()
-            for word in words:
-                word = word.strip()
-                first = word[0].lower()
-                for i in range(length):
-                    if first == possible_first_letters[i]:
-                        stats[i] += 1
-                        break
-            if total_word_count:
-                stats.append(len(words))
-        return stats
-    except Exception as e:
-        print(f"Could not read {filename}: {e}")
-"""
 def count_words(filename, possible_first_letters, total_word_count: bool = True):
     length = len(possible_first_letters)
     stats = [0] * length
